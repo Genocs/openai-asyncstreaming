@@ -25,8 +25,12 @@ To build the project with Docker, you can run the following command:
 
 ```bash
 # Build the Docker image
-docker build -t my-nodejs-app .
+docker build -t genocs/OpenAIStream:1.0.0 -t genocs/OpenAIStream:latest .
+
+# Push the Docker image to Docker Hub
+docker push genocs/OpenAIStream:1.0.0
+docker push genocs/OpenAIStream:latest
 
 # Run the Docker container
-docker run -p 3000:3000 my-nodejs-app
+docker run -p 3000:3000 genocs/OpenAIStream:latest -name OpenAIStream -d .
 ```
