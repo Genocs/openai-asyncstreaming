@@ -7,7 +7,7 @@ const systemMessage = {
   content: "You are an assistant help people to setup trip for fun. Please be concise and clear."
 };
 
-async function getStreamingCompletion({ userPrompt }) {
+async function tripPlanner({ userPrompt }) {
   return openaiClient.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [systemMessage, { role: "user", content: userPrompt }],
@@ -17,5 +17,5 @@ async function getStreamingCompletion({ userPrompt }) {
 }
 
 module.exports = {
-  getStreamingCompletion,
+  tripPlanner,
 };
